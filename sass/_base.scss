@@ -1,0 +1,99 @@
+// =========================================================
+// COLOR VARIABLES
+// =========================================================
+$color-primary: #c69963;
+$color-primary-dark: #B28451;
+
+$color-secondary: #101d2c;
+$color-secondary-light: #2c3949;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+// ========================================================
+// FONT VARIABLES
+// ========================================================
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+// ========================================================
+// BREAK POINTS
+// ========================================================
+
+$px1200:75em; //1200px
+$px1024:64em; //1024px
+$px992:62em;  //992px
+$px768:48.75em;  //780px
+$px575:35.9375em;  //575px
+
+
+
+
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+} 
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+html{
+    font-size:62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    @media only screen and (max-width:$px1200){
+        font-size: 50%;
+    }
+
+
+}
+body{
+    font-family: $font-primary;
+    font-weight: 300;
+    color:$color-grey-dark-2;
+    line-height:1.6;
+    overflow-x: hidden;
+}
+ 
+.container{
+
+    display: grid;
+    grid-template-rows:80vh min-content 40vw repeat(3,min-content);
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content,14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+    @media only screen and (max-width:$px992) {
+        grid-template-rows:7rem 80vh min-content 40vw repeat(3, min-content);
+        grid-template-columns:[full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    }
+
+    @media only screen and (max-width:$px768) {
+        grid-template-rows: 7rem 80vh min-content min-content min-content min-content repeat(3, min-content);
+        grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    }
+
+    @media only screen and (max-width:$px575) {
+        grid-template-rows: 7rem 80vh min-content min-content min-content min-content repeat(3, min-content);
+        grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end];
+
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
